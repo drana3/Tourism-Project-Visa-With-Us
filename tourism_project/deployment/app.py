@@ -1,4 +1,3 @@
-
 # tourism_project/deployment/app.py
 import streamlit as st
 import pandas as pd
@@ -18,7 +17,7 @@ MODEL_FILENAME = "best_tourism_model_v1.joblib"
 def load_model(repo_id: str, filename: str):
     """Download and load joblib model from Hugging Face Hub (cached)."""
     try:
-        st.info("Loading model...")
+        #st.info("Loading model...")
         model_path = hf_hub_download(repo_id=repo_id, filename=filename)
         model = joblib.load(model_path)
         return model
