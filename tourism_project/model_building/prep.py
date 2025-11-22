@@ -23,6 +23,11 @@ df.drop(columns=['Unnamed: 0', 'CustomerID'], inplace=True)
 df = df.drop_duplicates()
 print("Duplicates removed. New shape:", df.shape)
 
+# Few values in gender were having space, hence fixing them
+df['Gender'] = df['Gender'].replace({
+    'Fe Male': 'Female'
+})
+
 # Target
 target_col = 'ProdTaken'
 X = df.drop(columns=[target_col])
